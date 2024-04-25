@@ -2,32 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-primary: hsl(0, 0%, 100%);
+    --background-secondary: hsl(0, 0%, 98%);
+
+    --fill-primary: hsl(100, 0%, 100%);
+    --fill-primary-hover: hsl(0, 0%, 100%);
+    --fill-primary-active: hsl(0, 0%, 100%);
+    --fill-primary-selected: hsl(0, 0%, 100%);
+    --fill-brand: hsl(220, 87%, 55%);
+
+    --text-primary: hsl(220, 26%, 14%);
+    --text-primary-hover: hsl(220, 26%, 18%);
+    --text-primary-active: hsl(220, 26%, 24%);
+    --text-primary-on-fill: hsl(220, 26%, 98%);
+
+    --text-secondary: hsl(220, 3%, 47%);
+    --text-secondary-hover: hsl(220, 3%, 42%);
+    --text-secondary-active: hsl(220, 3%, 37%);
+    --text-secondary-on-fill: hsl(220, 3%, 98%);
+
+    --text-brand: hsl(220, 87%, 55%);
+    --text-brand-hover: hsl(220, 87%, 48%);
+    --text-brand-active: hsl(220, 87%, 42%);
+    --text-brand-on-fill: hsl(220, 100%, 98%);
+
+    --border-primary: hsl(220, 9%, 91%);
+    --border-primary-hover: hsl(220, 9%, 83%);
+    --border-primary-active: hsl(220, 9%, 75%);
+    --border-primary-selected: hsl(220, 9%, 67%);
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  :root[data-theme='dark'] {
+    --background-primary: hsl(220, 26%, 14%);
   }
 }

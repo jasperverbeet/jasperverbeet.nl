@@ -1,0 +1,10 @@
+{
+  "singleQuote": true,
+  "trailingComma": "none",
+  "tabWidth": 2,
+  "useTabs": false,
+  "printWidth": 80,
+  "plugins": ["prettier-plugin-jsdoc", "prettier-plugin-tailwindcss"],
+  "tailwindConfig": "apps/web/tailwind.config.ts",
+  "tailwindFunctions": ["tv"]
+}

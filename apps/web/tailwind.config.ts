@@ -54,37 +54,32 @@ const config = {
     },
     extend: {
       colors: {
-        // Elements: bg, surface, fill, border, text, icon, link
-        // Intents: {default}, brand, success, warning, danger, magic
-        // States: hover, active, focus, disabled
-
-        // bg-surface-primary
-        // bg-fill-brand
-        // bg-surface-success-primary
-        // text-text-success-primary
-
-        // {tailwind_modifier}-{element}-{intent}-{state}
-
-        // text-text-brand-onFill
-
-        text: {
-          primary: {
-            DEFAULT: "#1A202C",
-          },
-          secondary: {
-            DEFAULT: "#75777C",
-          },
-          brand: {
-            DEFAULT: "#266DF0",
-            onFill: "#FAFCFF",
-          },
-        },
         background: {
           primary: {
-            DEFAULT: "#FFFFFF",
+            DEFAULT: "var(--background-primary)",
           },
           secondary: {
-            DEFAULT: "#FBFBFB",
+            DEFAULT: "var(--background-secondary)",
+          },
+        },
+        text: {
+          primary: {
+            DEFAULT: "var(--text-primary)",
+            hover: "var(--text-primary-hover)",
+            active: "var(--text-primary-active)",
+            onFill: "var(--text-primary-on-fill)",
+          },
+          secondary: {
+            DEFAULT: "var(--text-secondary)",
+            hover: "var(--text-secondary-hover)",
+            active: "var(--text-secondary-active)",
+            onFill: "var(--text-secondary-on-fill)",
+          },
+          brand: {
+            DEFAULT: "var(--text-brand)",
+            hover: "var(--text-brand-hover)",
+            active: "var(--text-brand-active)",
+            onFill: "var(--text-brand-on-fill)",
           },
         },
         surface: {
@@ -97,13 +92,13 @@ const config = {
         },
         fill: {
           primary: {
-            DEFAULT: "#FFFFFF",
-            hover: "#FBFBFB",
-            active: "#F4F5F6",
-            selected: "#F4F5F6",
+            DEFAULT: "var(--fill-primary)",
+            hover: "var(--fill-primary-hover)",
+            active: "var(--fill-primary-active)",
+            selected: "var(--fill-primary-selected)",
           },
           brand: {
-            DEFAULT: "#266DF0",
+            DEFAULT: "var(--fill-brand)",
           },
         },
         border: {

@@ -2,6 +2,11 @@
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "biomejs.biome",
   "editor.codeActionsOnSave": {
-    "source.organizeImports.biome": "explicit"
-  }
+    "source.organizeImports.biome": "always",
+    "source.fixAll": "always"
+  },
+  "tailwindCSS.classAttributes": ["class", "className", "tv"],
+  "tailwindCSS.experimental.classRegex": [
+    ["tv\\((([^()]*|\\([^()]*\\))*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
+  ],
 }

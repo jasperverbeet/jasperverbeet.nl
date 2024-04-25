@@ -11,8 +11,8 @@ export const typographyStyles = tv({
       headerMd: "font-heading text-2xl font-semibold leading-8",
     },
     color: {
-      primary: "text-primary-foreground",
-      muted: "text-muted-foreground",
+      primary: "text-text-primary",
+      secondary: "text-text-secondary",
     },
   },
   defaultVariants: {

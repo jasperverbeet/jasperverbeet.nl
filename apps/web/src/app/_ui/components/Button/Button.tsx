@@ -21,8 +21,21 @@ const buttonStyles = tv({
     },
     shape: {
       rounded: "rounded-lg",
+      circle: "rounded-full",
     },
   },
+  compoundVariants: [
+    {
+      shape: "circle",
+      size: "md",
+      class: "w-9 p-1",
+    },
+    {
+      shape: "circle",
+      size: "lg",
+      class: "w-10 p-2",
+    },
+  ],
   defaultVariants: {
     role: "primary",
     variant: "default",
@@ -39,10 +52,19 @@ export interface ButtonProps
   asChild?: boolean;
 }
 
-const Button = ({ role, variant, size, asChild, className, children, ...props }: ButtonProps) => {
+const Button = ({
+  role,
+  variant,
+  size,
+  asChild,
+  shape,
+  className,
+  children,
+  ...props
+}: ButtonProps) => {
   const ButtonWrapper = asChild ? Slot : "button";
   return (
-    <ButtonWrapper className={buttonStyles({ role, variant, size, className })} {...props}>
+    <ButtonWrapper className={buttonStyles({ role, variant, shape, size, className })} {...props}>
       {children}
     </ButtonWrapper>
   );
