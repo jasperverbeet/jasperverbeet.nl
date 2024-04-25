@@ -1,0 +1,16 @@
+{
+  "name": "jasperverbeet.nl",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "format": "biome format",
+    "lint": "biome lint ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@biomejs/biome": "^1.7.1"
+  }
+}
