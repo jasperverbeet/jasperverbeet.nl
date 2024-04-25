@@ -5,11 +5,15 @@
   "main": "index.js",
   "scripts": {
     "format": "biome format",
-    "lint": "biome lint ."
+    "lint": "biome check .",
+    "lint:fix": "biome check --apply .",
+    "dev": "turbo run dev",
+    "build": "turbo run build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "workspaces": ["apps/*"],
   "devDependencies": {
     "@biomejs/biome": "^1.7.1",
     "turbo": "^1.13.2"
