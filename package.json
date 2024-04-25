@@ -1,8 +1,15 @@
 {
   "name": "jasperverbeet.nl",
   "version": "1.0.0",
-  "description": "",
+  "author": "",
   "main": "index.js",
+  "devDependencies": {
+    "@biomejs/biome": "^1.7.1",
+    "turbo": "^1.13.2"
+  },
+  "description": "",
+  "keywords": [],
+  "license": "ISC",
   "scripts": {
     "format": "biome format",
     "lint": "biome check .",
@@ -10,12 +17,5 @@
     "dev": "turbo run dev",
     "build": "turbo run build"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "workspaces": ["apps/*"],
-  "devDependencies": {
-    "@biomejs/biome": "^1.7.1",
-    "turbo": "^1.13.2"
-  }
+  "workspaces": ["apps/*"]
 }

@@ -1,5 +1,9 @@
 {
   "$schema": "https://biomejs.dev/schemas/1.6.4/schema.json",
+  "files": {
+    "ignoreUnknown": true,
+    "ignore": [".next", "node_modules/**", "**/dist", "**/out", "public/**/*.js"]
+  },
   "formatter": {
     "enabled": true,
     "formatWithErrors": true,
@@ -35,5 +39,10 @@
   "organizeImports": {
     "enabled": true,
     "include": ["./**/*.{js,jsx,ts,tsx}"]
+  },
+  "vcs": {
+    "enabled": true,
+    "useIgnoreFile": true,
+    "clientKind": "git"
   }
 }
