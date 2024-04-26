@@ -6,7 +6,7 @@ import Image from "next/image";
 const Header = () => {
   return (
     <header>
-      <div className="container flex justify-between py-3">
+      <div className="container flex justify-between items-center py-3">
         <Link variant="labelMd" href="/">
           Jasper Verbeet's Blog
         </Link>
