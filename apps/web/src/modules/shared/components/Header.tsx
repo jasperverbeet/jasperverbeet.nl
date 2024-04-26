@@ -1,5 +1,5 @@
-import ButtonAction from "@/app/_ui/components/Button/ButtonAction";
-import Link from "@/app/_ui/components/Link/Link";
+import ButtonAction from "@/modules/ui/components/Button/ButtonAction";
+import Link from "@/modules/ui/components/Link/Link";
 import Profile from "@/public/profile.jpeg";
 import Image from "next/image";
 

@@ -1,4 +1,4 @@
-import Header from "@/app/_shared/components/Header";
+import Header from "@/modules/shared/components/Header";
 
 const BlogLayout = ({ children }: React.PropsWithChildren) => {
   return (

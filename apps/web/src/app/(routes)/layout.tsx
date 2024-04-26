@@ -1,7 +1,7 @@
 import "../globals.css";
 
 import type { Metadata } from "next";
-import Providers from "@/app/_shared/components/Providers";
+import Providers from "@/modules/shared/components/Providers";
 import { inter, larsseit } from "@/lib/fonts/fonts";
 
 export const metadata: Metadata = {
