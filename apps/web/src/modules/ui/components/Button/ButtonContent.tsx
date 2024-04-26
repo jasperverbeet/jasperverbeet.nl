@@ -4,7 +4,7 @@ import Icon, { type IconProp } from "../Icon/Icon";
 
 export const buttonContentStyles = tv({
   slots: {
-    wrapper: "flex w-full items-center justify-center",
+    wrapper: "inline-flex items-center justify-center",
     leftFiller: "flex-shrink flex-grow basis-0",
     iconLeft: null,
     iconRight: "flex flex-shrink-0 flex-grow basis-0 justify-end",
@@ -29,7 +29,6 @@ export const buttonContentStyles = tv({
 export interface ButtonContentProps
   extends VariantProps<typeof buttonContentStyles>,
     React.PropsWithChildren {
-  asChild?: boolean;
   className?: string;
   iconLeft?: IconProp;
   iconRight?: IconProp;
