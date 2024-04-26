@@ -2,7 +2,7 @@ import "../globals.css";
 
 import type { Metadata } from "next";
 import Providers from "@/modules/root/components/Providers";
-import { inter, larsseit } from "@/lib/fonts/fonts";
+import { inter, jetbrains, larsseit } from "@/lib/fonts/fonts";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,7 +17,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Providers>
-        <body className={`${inter.variable} ${larsseit.variable} ${inter.className}`}>
+        <body
+          className={`${inter.variable} ${larsseit.variable} ${jetbrains.variable} ${inter.className}`}
+        >
           {children}
         </body>
       </Providers>

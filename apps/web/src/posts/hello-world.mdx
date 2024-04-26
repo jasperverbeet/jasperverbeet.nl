@@ -12,14 +12,28 @@ This is my **first** blog post using *markdown*. Here’s an example of some ico
 
 Here is an image:
 
-![Laptop on Desk](/profile.jpeg)
+![This is me](/profile.jpeg)
 
 There is a code snippet below:
 
-```js
-export function myComponent(){
-    return (
-        <p>test</p>
-    )
+```tsx
+import Tooltip from "3rd-party-tooltip-on-npm";
+
+function UserAvatar({ src, name }) {
+  const [showTooltip, setShowTooltip] = useState(false);
+  return (
+    <div>
+      <img
+        src={src}
+        alt={`Profile photo of ${name}`}
+        width="32"
+        height="32"
+      />
+      {showTooltip && <Tooltip>{name}</Tooltip>}
+    </div>
+  )
 }
+
+// const a = 123;
+// const b = 321;
 ```

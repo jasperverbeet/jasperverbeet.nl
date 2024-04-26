@@ -1,3 +1,4 @@
+import MdxCode from "@/modules/blog/components/MdxCode";
 import MdxH1 from "@/modules/blog/components/MdxH1";
 import MdxH2 from "@/modules/blog/components/MdxH2";
 import MdxImage from "@/modules/blog/components/MdxImage";
@@ -47,6 +48,8 @@ const BlogPage = async ({ params: { year, slug } }: { params: { year: string; sl
             h1: MdxH1,
             h2: MdxH2,
             img: MdxImage,
+            code: MdxCode,
+            pre: ({ children }) => <>{children}</>,
           }}
           source={post.content}
           options={{ parseFrontmatter: true }}

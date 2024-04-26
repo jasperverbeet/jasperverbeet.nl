@@ -1,4 +1,4 @@
-import { Inter } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import localFont from "next/font/local";
 
 export const inter = Inter({
@@ -6,6 +6,12 @@ export const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-inter",
+});
+
+export const jetbrains = JetBrains_Mono({
+  weight: ["400"],
+  display: "swap",
+  variable: "--font-jetbrains",
 });
 
 export const larsseit = localFont({

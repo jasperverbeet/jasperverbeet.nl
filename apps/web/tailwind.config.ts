@@ -23,6 +23,7 @@ const config = {
     fontFamily: {
       sans: ["var(--font-inter)", ...fontFamily.sans],
       heading: ["var(--font-larsseit)", ...fontFamily.sans],
+      mono: ["var(--font-jetbrains)", ...fontFamily.mono],
     },
     fontSize: {
       xs: "0.75rem", // 12px
@@ -55,12 +56,16 @@ const config = {
     },
     extend: {
       colors: {
+        // Tokens
         background: {
           primary: {
             DEFAULT: "var(--background-primary)",
           },
           secondary: {
             DEFAULT: "var(--background-secondary)",
+          },
+          code: {
+            DEFAULT: "var(--background-code)",
           },
         },
         text: {
@@ -82,13 +87,29 @@ const config = {
             active: "var(--text-brand-active)",
             onFill: "var(--text-brand-on-fill)",
           },
+          code: {
+            DEFAULT: "var(--text-code)",
+            onFill: "var(--text-code-on-fill)",
+
+            comment: "var(--text-code-comment)",
+            punctuation: "var(--text-code-punctuation)",
+            property: "var(--text-code-property)",
+            selector: "var(--text-code-selector)",
+            operator: "var(--text-code-operator)",
+            variable: "var(--text-code-variable)",
+            function: "var(--text-code-function)",
+            keyword: "var(--text-code-keyword)",
+          },
         },
         surface: {
           primary: {
-            DEFAULT: "#FFFFFF",
+            DEFAULT: "var(--surface-primary)",
           },
           secondary: {
-            DEFAULT: "#FBFBFB",
+            DEFAULT: "var(--surface-secondary)",
+          },
+          code: {
+            DEFAULT: "var(--surface-code)",
           },
         },
         fill: {
@@ -101,19 +122,32 @@ const config = {
           brand: {
             DEFAULT: "var(--fill-brand)",
           },
+          code: {
+            DEFAULT: "var(--fill-code)",
+          },
         },
         border: {
           primary: {
-            DEFAULT: "#E6E7EA",
-            hover: "#D1D3D6",
-            active: "#266DF0",
-            selected: "#266DF0",
+            DEFAULT: "var(--border-primary)",
+            hover: "var(--border-primary-hover)",
+            active: "var(--border-primary-active)",
+            selected: "var(--border-primary-selected)",
           },
           secondary: {
-            DEFAULT: "#EEEFF1",
+            DEFAULT: "var(--border-secondary)",
           },
           brand: {
-            DEFAULT: "#6A707C",
+            DEFAULT: "var(--border-brand)",
+          },
+        },
+
+        // Specialty tokens
+        header: {
+          surface: {
+            DEFAULT: "var(--header-surface)",
+          },
+          border: {
+            DEFAULT: "var(--header-border)",
           },
         },
       },

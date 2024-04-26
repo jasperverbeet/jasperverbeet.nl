@@ -2,16 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer base {
+  /* Default Theme */
+
   :root {
+    /* Design Tokens */
+
     --background-primary: hsl(0, 0%, 100%);
     --background-secondary: hsl(0, 0%, 98%);
+    --background-code: hsl(0, 0%, 100%);
 
     --fill-primary: hsl(100, 0%, 100%);
     --fill-primary-hover: hsl(0, 0%, 100%);
     --fill-primary-active: hsl(0, 0%, 100%);
     --fill-primary-selected: hsl(0, 0%, 100%);
     --fill-brand: hsl(220, 87%, 55%);
+    --fill-code: hsl(0, 50%, 50%);
 
     --text-primary: hsl(220, 26%, 14%);
     --text-primary-hover: hsl(220, 26%, 18%);
@@ -28,11 +35,38 @@
     --text-brand-active: hsl(220, 87%, 42%);
     --text-brand-on-fill: hsl(220, 100%, 98%);
 
+    --text-code: hsl(220, 3%, 47%);
+    --text-code-on-fill: hsl(220, 3%, 47%);
+    --text-code-comment: hsl(220, 3%, 47%);;
+    --text-code-punctuation: hsl(220, 3%, 47%);
+    --text-code-property: hsl(220, 3%, 47%);
+    --text-code-selector: hsl(220, 3%, 47%);
+    --text-code-operator: hsl(220, 3%, 47%);
+    --text-code-variable: hsl(220, 3%, 47%);
+    --text-code-function: hsl(220, 3%, 47%);
+    --text-code-keyword: hsl(220, 3%, 47%);
+
     --border-primary: hsl(220, 9%, 91%);
     --border-primary-hover: hsl(220, 9%, 83%);
     --border-primary-active: hsl(220, 9%, 75%);
     --border-primary-selected: hsl(220, 9%, 67%);
+    --border-secondary: hsl(220, 9%, 91%);
+    --border-secondary-hover: hsl(220, 9%, 83%);
+    --border-secondary-active: hsl(220, 9%, 75%);
+    --border-secondary-selected: hsl(220, 9%, 67%);
+    --border-code: hsl(220, 9%, 91%);
+
+    --surface-primary: hsl(0, 0%, 100%);
+    --surface-secondary: hsl(0, 0%, 98%);
+    --surface-code: hsl(220, 26%, 14%);
+
+    /* Theme variables */
+
+    --header-surface: var(--surface-secondary);
+    --header-border: transparent;
   }
+
+  /* Dark Theme */
 
   :root[data-theme='dark'] {
     --background-primary: hsl(220, 26%, 14%);

@@ -2,10 +2,12 @@ import { Slot } from "@radix-ui/react-slot";
 import { type VariantProps, tv } from "tailwind-variants";
 
 export const typographyStyles = tv({
-  base: "font-sans",
+  base: "",
   variants: {
     variant: {
-      bodySm: "text-sm font-normal leading-6",
+      monoSm: "text-sm font-mono leading-5",
+      monoMd: "text-base font-mono leading-6",
+      bodySm: "text-sm font-normal leading-5",
       bodyMd: "text-base font-normal leading-6",
       bodyLg: "text-lg font-normal leading-7",
       labelSm: "text-sm font-medium leading-5",
