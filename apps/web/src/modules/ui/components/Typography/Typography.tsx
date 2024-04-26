@@ -5,10 +5,14 @@ export const typographyStyles = tv({
   base: "font-sans",
   variants: {
     variant: {
-      labelSm: "text-base font-medium leading-5",
-      labelMd: "text-lg font-medium leading-6",
-      headerSm: "font-heading text-xl font-semibold leading-7",
-      headerMd: "font-heading text-2xl font-semibold leading-8",
+      bodySm: "text-sm font-normal leading-6",
+      bodyMd: "text-base font-normal leading-6",
+      bodyLg: "text-lg font-normal leading-7",
+      labelSm: "text-sm font-medium leading-5",
+      labelMd: "text-base font-medium leading-6",
+      headingXs: "font-heading text-lg font-semibold leading-6",
+      headingSm: "font-heading text-xl font-semibold leading-7",
+      headingMd: "font-heading text-2xl font-semibold leading-8",
     },
     color: {
       primary: "text-text-primary",

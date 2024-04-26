@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <header>
       <div className="container flex justify-between py-3">
-        <Link variant="labelSm" href="/">
+        <Link variant="labelMd" href="/">
           Jasper Verbeet's Blog
         </Link>
         <ButtonAction size="lg" shape="circle" className="p-0">
