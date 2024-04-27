@@ -50,6 +50,7 @@ const getPageViews = async (slugs: string[] = []) =>
         display: "ActionsTable",
         date_from: "ALL",
         breakdown: "$current_url",
+        refresh: true,
       },
     });
 
