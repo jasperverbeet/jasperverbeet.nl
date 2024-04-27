@@ -1,7 +1,7 @@
 import ButtonAction from "@/modules/ui/components/Button/ButtonAction";
 import Link from "@/modules/ui/components/Link/Link";
 import Profile from "@/public/profile.jpeg";
-import { IconAdjustments } from "@tabler/icons-react";
+import { IconMenu } from "@tabler/icons-react";
 import Image from "next/image";
 
 const Header = () => {
@@ -11,12 +11,7 @@ const Header = () => {
         <Link variant="labelMd" href="/">
           Jasper Verbeet's Site
         </Link>
-        <ButtonAction
-          size="lg"
-          shape="pill"
-          className="pl-1 pt-1 pb-1 pr-2"
-          iconRight={IconAdjustments}
-        >
+        <ButtonAction size="lg" shape="pill" className="pl-1 pt-1 pb-1 pr-2" iconRight={IconMenu}>
           <Image src={Profile} width={32} alt="Profile Picture" className="rounded-full h-full" />
         </ButtonAction>
       </div>
