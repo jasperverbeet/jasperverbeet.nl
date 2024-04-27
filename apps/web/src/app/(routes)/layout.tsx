@@ -3,6 +3,11 @@ import "../globals.css";
 import type { Metadata } from "next";
 import Providers from "@/modules/root/components/Providers";
 import { inter, jetbrains, larsseit } from "@/lib/fonts/fonts";
+import dynamic from "next/dynamic";
+
+const PostHogPageView = dynamic(() => import("@/lib/posthog/PostHogPageView"), {
+  ssr: false,
+});
 
 export const metadata: Metadata = {
   title: "Jasper Verbeet",
@@ -20,6 +25,7 @@ export default function RootLayout({
         <body
           className={`${inter.variable} ${larsseit.variable} ${jetbrains.variable} ${inter.className} flex min-h-screen flex-col`}
         >
+          <PostHogPageView />
           {children}
         </body>
       </Providers>

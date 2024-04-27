@@ -12,17 +12,19 @@ const SectionLatest = async () => {
 
   return (
     <Section>
-      <Typography variant="headingSm">Latest</Typography>
-      <ul className="flex gap-4 flex-col">
-        {posts.map((post) => (
-          <PostListItemLatest
-            key={post.slug}
-            title={post.meta.title}
-            href={post.route}
-            date={post.meta.date}
-          />
-        ))}
-      </ul>
+      <div className="space-y-4">
+        <Typography variant="headingSm">Latest</Typography>
+        <ul className="space-y-4">
+          {posts.map((post) => (
+            <PostListItemLatest
+              key={post.slug}
+              title={post.meta.title}
+              href={post.route}
+              date={post.meta.date}
+            />
+          ))}
+        </ul>
+      </div>
     </Section>
   );
 };

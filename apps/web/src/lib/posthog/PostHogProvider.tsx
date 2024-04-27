@@ -7,6 +7,7 @@ import { PostHogProvider as PHProvider } from "posthog-js/react";
 if (typeof window !== "undefined") {
   posthog.init(clientEnv.NEXT_PUBLIC_POSTHOG_KEY, {
     api_host: new URL("/ph", window.location.origin).toString(),
+    capture_pageview: false,
   });
 }
 

@@ -6,16 +6,18 @@ import Typography from "../ui/components/Typography/Typography";
 const SectionSocials = () => {
   return (
     <Section>
-      <div className="flex flex-col gap-1">
+      <div className="space-y-4">
         <Typography variant="headingSm">Jasper Verbeet</Typography>
-        <Typography variant="bodyMd" color="secondary" className="italic">
-          Engineer
-        </Typography>
-        <Typography variant="bodyMd" color="secondary">
-          7+ years of experience building for the web.
-        </Typography>
+        <div className="space-y-1">
+          <Typography variant="bodyMd" color="secondary" className="italic">
+            Engineer
+          </Typography>
+          <Typography variant="bodyMd" color="secondary">
+            7+ years of experience building for the web.
+          </Typography>
+        </div>
       </div>
-      <ul className="flex flex-col gap-4">
+      <ul className="space-y-4">
         <li>
           <Link
             href="https://www.linkedin.com/in/jasperverbeet/"
