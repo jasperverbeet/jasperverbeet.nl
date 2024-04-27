@@ -62,7 +62,7 @@
 
     /* Theme variables */
 
-    --header-surface: var(--surface-secondary);
+    --header-surface: var(--surface-primary);
     --header-border: transparent;
   }
 

@@ -12,9 +12,10 @@ export const typographyStyles = tv({
       bodyLg: "text-lg font-normal leading-7",
       labelSm: "text-sm font-medium leading-5",
       labelMd: "text-base font-medium leading-6",
-      headingXs: "font-heading text-lg font-semibold leading-6",
-      headingSm: "font-heading text-xl font-semibold leading-7",
-      headingMd: "font-heading text-2xl font-semibold leading-8",
+      headingXs: "font-heading text-base font-semibold leading-5",
+      headingSm: "font-heading text-lg font-semibold leading-6",
+      headingMd: "font-heading text-xl font-semibold leading-7",
+      headingLg: "font-heading text-2xl font-semibold leading-8",
     },
     color: {
       primary: "text-text-primary",

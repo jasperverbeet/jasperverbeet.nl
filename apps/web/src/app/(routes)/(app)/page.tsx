@@ -1,7 +1,11 @@
-import Typography from "@/modules/ui/components/Typography/Typography";
+import SectionSocials from "@/modules/home/SectionSocials";
 
 const HomePage = () => {
-  return <Typography>Hello world</Typography>;
+  return (
+    <>
+      <SectionSocials />
+    </>
+  );
 };
 
 export default HomePage;

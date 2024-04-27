@@ -1,6 +1,6 @@
 import { type VariantProps, tv } from "tailwind-variants";
 
-import Icon, { type IconProp } from "../Icon/Icon";
+import Icon, { type IconProps, type IconProp } from "../Icon/Icon";
 
 export const buttonContentStyles = tv({
   slots: {
@@ -31,7 +31,9 @@ export interface ButtonContentProps
     React.PropsWithChildren {
   className?: string;
   iconLeft?: IconProp;
+  iconLeftVariant?: IconProps["variant"];
   iconRight?: IconProp;
+  iconRightVariant?: IconProps["variant"];
 }
 
 const {
@@ -44,8 +46,9 @@ const {
 const ButtonContent = ({
   size,
   iconLeft,
+  iconLeftVariant,
   iconRight,
-
+  iconRightVariant,
   className,
   children,
 }: ButtonContentProps) => {
@@ -53,7 +56,9 @@ const ButtonContent = ({
     <span className={wrapper({ className })}>
       {iconRight && <span className={leftFiller()} />}
 
-      {iconLeft && <Icon className={iconLeftStyles({ size })} icon={iconLeft} />}
+      {iconLeft && (
+        <Icon className={iconLeftStyles({ size })} icon={iconLeft} variant={iconLeftVariant} />
+      )}
 
       {children}
 
@@ -63,7 +68,7 @@ const ButtonContent = ({
             size,
           })}
         >
-          <Icon icon={iconRight} />
+          <Icon icon={iconRight} variant={iconRightVariant} />
         </span>
       )}
     </span>

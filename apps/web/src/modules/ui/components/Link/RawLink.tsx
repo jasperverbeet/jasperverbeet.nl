@@ -9,8 +9,10 @@ export interface RawLinkProps extends ButtonContentProps {
 
 const RawLink = ({
   href,
-  iconRight,
   iconLeft,
+  iconLeftVariant,
+  iconRight,
+  iconRightVariant,
   children,
   ...props
 }: React.PropsWithChildren<RawLinkProps>) => {
@@ -23,7 +25,13 @@ const RawLink = ({
       target={isExternal ? "_blank" : undefined}
       rel={isExternal ? "noopener" : undefined}
     >
-      <ButtonContent {...props} iconLeft={iconLeft} iconRight={_iconRight}>
+      <ButtonContent
+        {...props}
+        iconLeft={iconLeft}
+        iconRight={_iconRight}
+        iconLeftVariant={iconLeftVariant}
+        iconRightVariant={iconRightVariant}
+      >
         {children}
       </ButtonContent>
     </Link>

@@ -9,6 +9,7 @@ export const iconStyles = tv({
     variant: {
       primary: "text-text-primary",
       secondary: "text-text-secondary",
+      brand: "text-text-brand",
     },
   },
   defaultVariants: {
