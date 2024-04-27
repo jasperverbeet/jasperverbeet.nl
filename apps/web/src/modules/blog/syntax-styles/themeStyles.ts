@@ -30,10 +30,7 @@ const themeStyles = {
     MozHyphens: "none",
     msHyphens: "none",
     hyphens: "none",
-    padding: "1em",
-    margin: ".5em 0",
     overflow: "auto",
-    borderRadius: "0.3em",
   },
   ':not(pre) > code[class*="language-"]': {
     background: "var(--fill-code)",

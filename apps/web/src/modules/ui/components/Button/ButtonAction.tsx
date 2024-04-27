@@ -7,7 +7,6 @@ const ButtonAction = ({
   role,
   variant,
   size,
-  asChild,
   className,
   iconLeft,
   iconRight,
@@ -16,7 +15,7 @@ const ButtonAction = ({
 }: ButtonActionProps) => {
   return (
     <Button role={role} variant={variant} size={size} className={className} {...props}>
-      <ButtonContent iconLeft={iconLeft} iconRight={iconRight} asChild={asChild}>
+      <ButtonContent iconLeft={iconLeft} iconRight={iconRight}>
         {children}
       </ButtonContent>
     </Button>

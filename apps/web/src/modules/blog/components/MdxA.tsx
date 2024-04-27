@@ -8,7 +8,7 @@ const MdxA = forwardRef<HTMLAnchorElement, Omit<React.HTMLProps<HTMLAnchorElemen
     }
 
     return (
-      <Link href={href} ref={ref} {...props} variant="bodyLg" color="brand">
+      <Link href={href} ref={ref} {...props} variant="bodyLg" color="brand" showUnderline>
         {children}
       </Link>
     );

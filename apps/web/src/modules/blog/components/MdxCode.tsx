@@ -9,8 +9,12 @@ const MdxCode = forwardRef<HTMLElement, React.HTMLProps<HTMLElement>>(({ childre
   }
 
   return (
-    <Typography variant="monoSm" asChild>
-      <SyntaxHighlighter style={themeStyles} language="js" wrapLongLines={true}>
+    <Typography
+      variant="monoSm"
+      asChild
+      className="w-[calc(100%_+_2rem)] max-w-[initial] -translate-x-4 p-4 rounded-none md:rounded-lg"
+    >
+      <SyntaxHighlighter style={themeStyles} language="js">
         {children as string}
       </SyntaxHighlighter>
     </Typography>

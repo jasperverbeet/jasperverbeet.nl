@@ -10,13 +10,13 @@ export const linkStyles = tv({
       brand: "text-text-brand hover:text-text-brand-hover active:text-text-brand-active",
     },
     showUnderline: {
-      true: "hover:underline",
+      true: "underline",
       false: "",
     },
   },
   defaultVariants: {
     color: "brand",
-    showUnderline: true,
+    showUnderline: false,
   },
 });
 

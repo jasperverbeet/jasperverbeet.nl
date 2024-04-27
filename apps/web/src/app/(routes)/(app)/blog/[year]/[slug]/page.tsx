@@ -38,7 +38,7 @@ const BlogPage = async ({ params: { year, slug } }: { params: { year: string; sl
 
   return (
     <>
-      <article className="container mx-auto mb-20">
+      <article className="container mx-auto mb-20 max-w-prose">
         <header className="mx-auto my-20">
           <Typography variant="headingMd">{post.meta.title}</Typography>
           <Typography variant="labelMd" color="secondary" asChild>
@@ -61,7 +61,7 @@ const BlogPage = async ({ params: { year, slug } }: { params: { year: string; sl
           />
         </div>
       </article>
-      <footer className="container mx-auto mb-20 flex flex-col gap-3 items-start">
+      <footer className="container max-w-prose mx-auto mb-20 flex flex-col gap-3 items-start">
         <Typography
           variant="labelSm"
           color="secondary"
