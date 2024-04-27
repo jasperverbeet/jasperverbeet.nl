@@ -11,42 +11,39 @@ const frontMatterSchema = z.object({
 });
 
 const getPost = async (filename: string) => {
-  return cache(
-    async (slug: string) => {
-      /**
-       * Read the file content
-       */
-      const content = await readFile(path.join("src", "posts", slug), "utf-8");
+  return cache(async () => {
+    /**
+     * Read the file content
+     */
+    const content = await readFile(path.join("src", "posts", filename), "utf-8");
 
-      /**
-       * Parse the front matter
-       */
-      const { data: frontMatter } = matter(content);
+    /**
+     * Parse the front matter
+     */
+    const { data: frontMatter } = matter(content);
 
-      /**
-       * Validate the front matter
-       */
-      const meta = frontMatterSchema.parse(frontMatter);
+    /**
+     * Validate the front matter
+     */
+    const meta = frontMatterSchema.parse(frontMatter);
 
-      /**
-       * Remove the .mdx extension from the slug
-       */
-      const _slug = slug.replace(/\.mdx$/, "");
+    /**
+     * Remove the .mdx extension from the slug
+     */
+    const slug = filename.replace(/\.mdx$/, "");
 
-      /**
-       * Generate the route
-       */
-      const route = `/blog/${meta.date.getFullYear()}/${_slug}`;
+    /**
+     * Generate the route
+     */
+    const route = `/blog/${meta.date.getFullYear()}/${slug}`;
 
-      return {
-        slug: _slug,
-        route,
-        content,
-        meta,
-      };
-    },
-    ["getPost", filename],
-  )(filename);
+    return {
+      slug,
+      route,
+      content,
+      meta,
+    };
+  }, ["getPost", filename])();
 };
 
 export default getPost;
