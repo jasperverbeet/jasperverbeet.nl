@@ -4,7 +4,7 @@ import Icon, { type IconProps, type IconProp } from "../Icon/Icon";
 
 export const buttonContentStyles = tv({
   slots: {
-    wrapper: "inline-flex items-center justify-center",
+    wrapper: "inline-flex items-center justify-center flex-grow",
     leftFiller: "flex-shrink flex-grow basis-0",
     iconLeft: null,
     iconRight: "flex flex-shrink-0 flex-grow basis-0 justify-end",
