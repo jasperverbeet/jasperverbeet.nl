@@ -9,11 +9,11 @@ export interface PostListItemProps {
 
 const PostListItem = ({ title, href, stat }: React.PropsWithChildren<PostListItemProps>) => {
   return (
-    <li className="flex w-full justify-between items-start">
+    <li className="flex w-full justify-between items-start gap-3">
       <Link href={href} variant="labelMd" color="brand" className="flex-grow">
         {title}
       </Link>
-      <Typography variant="bodySm" color="secondary" className="flex-shrink-0">
+      <Typography variant="bodySm" color="secondary" className="flex-shrink-0 mt-0.5">
         {stat}
       </Typography>
     </li>

@@ -39,12 +39,14 @@ const BlogPage = async ({ params: { year, slug } }: { params: { year: string; sl
     <>
       <article className="container mx-auto mb-20 max-w-prose">
         <header className="mx-auto my-20">
-          <Typography variant="headingMd">{post.meta.title}</Typography>
-          <Typography variant="labelMd" color="secondary" asChild>
-            <time dateTime={post.meta.date.toISOString()}>
-              {post.meta.date.toLocaleDateString()}
-            </time>
-          </Typography>
+          <div className="flex flex-col gap-1">
+            <Typography variant="headingMd">{post.meta.title}</Typography>
+            <Typography variant="bodyMd" color="secondary" asChild>
+              <time dateTime={post.meta.date.toISOString()}>
+                {post.meta.date.toLocaleDateString()}
+              </time>
+            </Typography>
+          </div>
         </header>
         <div className="prose">
           <MDXRemote
