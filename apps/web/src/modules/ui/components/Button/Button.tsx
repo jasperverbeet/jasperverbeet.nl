@@ -1,4 +1,5 @@
 import { Slot } from "@radix-ui/react-slot";
+import { forwardRef } from "react";
 import { type VariantProps, tv } from "tailwind-variants";
 
 const buttonStyles = tv({
@@ -53,22 +54,19 @@ export interface ButtonProps
   asChild?: boolean;
 }
 
-const Button = ({
-  role,
-  variant,
-  size,
-  asChild,
-  shape,
-  className,
-  children,
-  ...props
-}: ButtonProps) => {
-  const ButtonWrapper = asChild ? Slot : "button";
-  return (
-    <ButtonWrapper className={buttonStyles({ role, variant, shape, size, className })} {...props}>
-      {children}
-    </ButtonWrapper>
-  );
-};
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ role, variant, size, asChild, shape, className, children, ...props }: ButtonProps, ref) => {
+    const ButtonWrapper = asChild ? Slot : "button";
+    return (
+      <ButtonWrapper
+        ref={ref}
+        className={buttonStyles({ role, variant, shape, size, className })}
+        {...props}
+      >
+        {children}
+      </ButtonWrapper>
+    );
+  },
+);
 
 export default Button;

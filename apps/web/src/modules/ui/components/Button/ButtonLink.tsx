@@ -1,22 +1,17 @@
 import Button, { type ButtonProps } from "./Button";
 import RawLink, { type RawLinkProps } from "../Link/RawLink";
+import { forwardRef } from "react";
 
-export interface ButtonActionProps extends ButtonProps, RawLinkProps {}
+export interface ButtonLinkProps extends ButtonProps, RawLinkProps {}
 
-const ButtonAction = ({
-  role,
-  variant,
-  size,
-  asChild,
-  className,
-  children,
-  ...props
-}: ButtonActionProps) => {
-  return (
-    <Button role={role} variant={variant} size={size} className={className} {...props} asChild>
-      <RawLink {...props}>{children}</RawLink>
-    </Button>
-  );
-};
+const ButtonLink = forwardRef<HTMLButtonElement, ButtonLinkProps>(
+  ({ role, variant, size, asChild, className, children, ...props }: ButtonLinkProps, ref) => {
+    return (
+      <Button ref={ref} role={role} variant={variant} size={size} className={className} asChild>
+        <RawLink {...props}>{children}</RawLink>
+      </Button>
+    );
+  },
+);
 
-export default ButtonAction;
+export default ButtonLink;
