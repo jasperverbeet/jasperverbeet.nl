@@ -5,7 +5,7 @@ import Providers from "@/modules/root/components/Providers";
 import { inter, jetbrains, larsseit } from "@/lib/fonts/fonts";
 import dynamic from "next/dynamic";
 
-const PostHogPageView = dynamic(() => import("@/lib/posthog/PostHogPageView"), {
+const PostHogPageView = dynamic(() => import("@/lib/posthog/components/PostHogPageView"), {
   ssr: false,
 });
 
