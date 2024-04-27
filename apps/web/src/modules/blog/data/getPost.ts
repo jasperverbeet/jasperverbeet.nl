@@ -1,17 +1,17 @@
 import { readFile } from "node:fs/promises";
-import { unstable_cache } from "next/cache";
 import path from "node:path";
 import matter from "gray-matter";
 import { z } from "zod";
+import { cache } from "@/modules/root/utils/cache";
 
 const frontMatterSchema = z.object({
   title: z.string(),
-  date: z.string().transform((value) => new Date(value).toISOString()),
+  date: z.string().pipe(z.coerce.date()),
   description: z.string(),
 });
 
 const getPost = async (filename: string) => {
-  return unstable_cache(
+  return cache(
     async (slug: string) => {
       /**
        * Read the file content
@@ -28,8 +28,19 @@ const getPost = async (filename: string) => {
        */
       const meta = frontMatterSchema.parse(frontMatter);
 
+      /**
+       * Remove the .mdx extension from the slug
+       */
+      const _slug = slug.replace(/\.mdx$/, "");
+
+      /**
+       * Generate the route
+       */
+      const route = `/blog/${meta.date.getFullYear()}/${_slug}`;
+
       return {
-        slug,
+        slug: _slug,
+        route,
         content,
         meta,
       };

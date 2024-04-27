@@ -7,7 +7,7 @@ const SectionSocials = () => {
   return (
     <Section>
       <div className="flex flex-col gap-1">
-        <Typography variant="headingXs">Jasper Verbeet</Typography>
+        <Typography variant="headingSm">Jasper Verbeet</Typography>
         <Typography variant="bodyMd" color="secondary" className="italic">
           Engineer
         </Typography>
@@ -15,7 +15,7 @@ const SectionSocials = () => {
           7+ years of experience building for the web.
         </Typography>
       </div>
-      <ul className="flex flex-col gap-3">
+      <ul className="flex flex-col gap-4">
         <li>
           <Link
             href="https://www.linkedin.com/in/jasperverbeet/"

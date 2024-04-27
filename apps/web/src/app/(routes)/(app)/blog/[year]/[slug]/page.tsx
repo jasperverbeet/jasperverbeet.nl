@@ -16,11 +16,10 @@ export const generateStaticParams = async () => {
   const posts = await getAllPosts();
 
   return posts.map((post) => {
-    const date = new Date(post.meta.date);
     return [
       {
-        year: date.getFullYear().toString(),
-        slug: post.slug.replace(/\.mdx$/, ""),
+        year: post.meta.date.getFullYear().toString(),
+        slug: post.slug,
       },
     ];
   });
@@ -32,7 +31,7 @@ const BlogPage = async ({ params: { year, slug } }: { params: { year: string; sl
   /**
    * If the date doesn't match the year, return a 404
    */
-  if (new Date(post.meta.date).getFullYear() !== Number.parseInt(year, 10)) {
+  if (post.meta.date.getFullYear() !== Number.parseInt(year, 10)) {
     return notFound();
   }
 
@@ -42,7 +41,9 @@ const BlogPage = async ({ params: { year, slug } }: { params: { year: string; sl
         <header className="mx-auto my-20">
           <Typography variant="headingMd">{post.meta.title}</Typography>
           <Typography variant="labelMd" color="secondary" asChild>
-            <time dateTime={post.meta.date}>{new Date(post.meta.date).toLocaleDateString()}</time>
+            <time dateTime={post.meta.date.toISOString()}>
+              {post.meta.date.toLocaleDateString()}
+            </time>
           </Typography>
         </header>
         <div className="prose">
