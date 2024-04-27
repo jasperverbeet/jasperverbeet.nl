@@ -14,9 +14,9 @@
     --background-code: hsl(0, 0%, 100%);
 
     --fill-primary: hsl(100, 0%, 100%);
-    --fill-primary-hover: hsl(0, 0%, 100%);
-    --fill-primary-active: hsl(0, 0%, 100%);
-    --fill-primary-selected: hsl(0, 0%, 100%);
+    --fill-primary-hover: hsl(0, 0%, 98%);
+    --fill-primary-active: hsl(0, 0%, 96%);
+    --fill-primary-selected: hsl(0, 0%, 96%);
     --fill-brand: hsl(220, 87%, 55%);
     --fill-code: hsl(0, 50%, 50%);
 

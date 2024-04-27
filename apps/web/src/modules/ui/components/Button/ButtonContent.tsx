@@ -30,6 +30,7 @@ export interface ButtonContentProps
   extends VariantProps<typeof buttonContentStyles>,
     React.PropsWithChildren {
   className?: string;
+  stretch?: boolean;
   iconLeft?: IconProp;
   iconLeftVariant?: IconProps["variant"];
   iconRight?: IconProp;
@@ -45,6 +46,7 @@ const {
 
 const ButtonContent = ({
   size,
+  stretch = false,
   iconLeft,
   iconLeftVariant,
   iconRight,
@@ -54,7 +56,7 @@ const ButtonContent = ({
 }: ButtonContentProps) => {
   return (
     <span className={wrapper({ className })}>
-      {iconRight && <span className={leftFiller()} />}
+      {iconRight && !stretch && <span className={leftFiller()} />}
 
       {iconLeft && (
         <Icon className={iconLeftStyles({ size })} icon={iconLeft} variant={iconLeftVariant} />

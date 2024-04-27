@@ -3,8 +3,10 @@ import * as Popover from "@radix-ui/react-popover";
 
 import ButtonAction from "@/modules/ui/components/Button/ButtonAction";
 import Profile from "@/public/profile.jpeg";
-import { IconMenu } from "@tabler/icons-react";
+import { IconAdjustments, IconArrowRight, IconMenu } from "@tabler/icons-react";
 import Image from "next/image";
+import ButtonLink from "@/modules/ui/components/Button/ButtonLink";
+import Divider from "@/modules/ui/components/Divider/Divider";
 
 const Menu = () => {
   return (
@@ -18,18 +20,42 @@ const Menu = () => {
         <Popover.Content
           sideOffset={5}
           align="end"
-          className="bg-surface-primary border rounded-lg border-border-primary border-b-2"
+          className="bg-surface-primary border rounded-lg border-border-primary border-b-2 py-1"
         >
-          <ul className="space-y-2">
-            <li>
-              <a href="/" className="block px-4 py-2">
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="/archive" className="block px-4 py-2">
+          <ul className="space-y-1 w-32">
+            <li className="px-1">
+              <ButtonLink
+                href="/blog"
+                className=""
+                variant="ghost"
+                iconRight={IconArrowRight}
+                stretch
+              >
                 Archive
-              </a>
+              </ButtonLink>
+            </li>
+            <li className="px-1">
+              <ButtonLink
+                href="/blog"
+                className=""
+                variant="ghost"
+                iconRight={IconArrowRight}
+                stretch
+              >
+                About me
+              </ButtonLink>
+            </li>
+            <Divider />
+            <li className="px-1">
+              <ButtonLink
+                href="/blog"
+                className=""
+                variant="ghost"
+                iconRight={IconAdjustments}
+                stretch
+              >
+                Theme
+              </ButtonLink>
             </li>
           </ul>
         </Popover.Content>
