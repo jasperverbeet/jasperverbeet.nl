@@ -10,6 +10,11 @@ export const buttonContentStyles = tv({
     iconRight: "flex flex-shrink-0 flex-grow basis-0 justify-end",
   },
   variants: {
+    stretch: {
+      true: {
+        wrapper: "justify-between",
+      },
+    },
     size: {
       md: {
         iconLeft: "mr-1.5",
@@ -22,6 +27,7 @@ export const buttonContentStyles = tv({
     },
   },
   defaultVariants: {
+    stretch: false,
     size: "md",
   },
 });
@@ -46,7 +52,7 @@ const {
 
 const ButtonContent = ({
   size,
-  stretch = false,
+  stretch,
   iconLeft,
   iconLeftVariant,
   iconRight,
@@ -55,7 +61,7 @@ const ButtonContent = ({
   children,
 }: ButtonContentProps) => {
   return (
-    <span className={wrapper({ className })}>
+    <span className={wrapper({ className, stretch })}>
       {iconRight && !stretch && <span className={leftFiller()} />}
 
       {iconLeft && (

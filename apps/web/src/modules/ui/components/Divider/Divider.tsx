@@ -4,7 +4,7 @@ import { type VariantProps, tv } from "tailwind-variants";
 export const dividerStyles = tv({
   slots: {
     wrapper: "h-1 flex items-center w-full",
-    line: "flex-grow h-px bg-border-primary",
+    line: "flex-grow h-px border-border-primary",
   },
 });
 

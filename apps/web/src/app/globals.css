@@ -33,7 +33,7 @@
     --text-brand: hsl(220, 87%, 55%);
     --text-brand-hover: hsl(220, 87%, 48%);
     --text-brand-active: hsl(220, 87%, 42%);
-    --text-brand-on-fill: hsl(220, 100%, 98%);
+    --text-brand-on-fill: hsl(220, 3%, 98%);
 
     --text-code: hsl(220, 3%, 47%);
     --text-code-on-fill: hsl(220, 3%, 47%);
@@ -50,10 +50,6 @@
     --border-primary-hover: hsl(220, 9%, 83%);
     --border-primary-active: hsl(220, 9%, 75%);
     --border-primary-selected: hsl(220, 9%, 67%);
-    --border-secondary: hsl(220, 9%, 91%);
-    --border-secondary-hover: hsl(220, 9%, 83%);
-    --border-secondary-active: hsl(220, 9%, 75%);
-    --border-secondary-selected: hsl(220, 9%, 67%);
     --border-code: hsl(220, 9%, 91%);
 
     --surface-primary: hsl(0, 0%, 100%);
@@ -69,6 +65,118 @@
   /* Dark Theme */
 
   :root[data-theme='dark'] {
-    --background-primary: hsl(220, 26%, 14%);
+    
+    /* Design Tokens */
+    --background-primary: hsl(220, 10%, 12%);
+    --background-secondary: hsl(220, 8%, 15%);
+    --background-code: hsl(220, 26%, 14%);
+
+    --fill-primary: hsl(220, 10%, 12%);
+    --fill-primary-hover: hsl(220, 10%, 18%);
+    --fill-primary-active: hsl(220, 10%, 24%);
+    --fill-primary-selected: hsl(220, 10%, 24%);
+    --fill-brand: hsl(220, 87%, 55%);
+    --fill-code: hsl(0, 50%, 50%);
+
+    --text-primary: hsl(220, 26%, 98%);
+    --text-primary-hover: hsl(220, 26%, 94%);
+    --text-primary-active: hsl(220, 26%, 88%);
+    --text-primary-on-fill: hsl(220, 26%, 98%);
+
+    --text-secondary: hsl(220, 3%, 54%);
+    --text-secondary-hover: hsl(220, 3%, 49%);
+    --text-secondary-active: hsl(220, 3%, 44%);
+    --text-secondary-on-fill: hsl(220, 3%, 98%);
+
+    --text-brand: hsl(220, 87%, 55%);
+    --text-brand-hover: hsl(220, 87%, 48%);
+    --text-brand-active: hsl(220, 87%, 42%);
+    --text-brand-on-fill: hsl(220, 3%, 98%);
+
+    --text-code: hsl(220, 3%, 47%);
+    --text-code-on-fill: hsl(220, 3%, 47%);
+    --text-code-comment: hsl(220, 3%, 47%);;
+    --text-code-punctuation: hsl(220, 3%, 47%);
+    --text-code-property: hsl(220, 3%, 47%);
+    --text-code-selector: hsl(220, 3%, 47%);
+    --text-code-operator: hsl(220, 3%, 47%);
+    --text-code-variable: hsl(220, 3%, 47%);
+    --text-code-function: hsl(220, 3%, 47%);
+    --text-code-keyword: hsl(220, 3%, 47%);
+
+    --border-primary: hsl(220, 9%, 20%);
+    --border-primary-hover: hsl(220, 9%, 28%);
+    --border-primary-active: hsl(220, 9%, 36%);
+    --border-primary-selected: hsl(220, 9%, 44%);
+    --border-code: var(--border-primary);
+
+    --surface-primary: var(--background-primary);
+    --surface-secondary: var(--background-secondary);
+    --surface-code: var(--background-code);
+
+    /* Theme variables */
+
+    --header-surface: var(--surface-primary);
+    --header-border: transparent;
   }
+
+  :root[data-theme='paper'] {
+    
+    /* Design Tokens */
+    --background-primary: hsl(220, 3%, 93%);
+    --background-secondary: hsl(220, 3%, 90%);
+    --background-code: hsl(220, 3%, 90%);
+
+    --fill-primary: hsl(220, 3%, 93%);
+    --fill-primary-hover: hsl(220, 3%, 90%);
+    --fill-primary-active: hsl(220, 3%, 87%);
+    --fill-primary-selected: hsl(220, 3%, 87%);
+    --fill-brand: hsl(220, 87%, 55%);
+    --fill-code: hsl(0, 50%, 50%);
+
+    --text-primary: hsl(220, 26%, 14%);
+    --text-primary-hover: hsl(220, 26%, 18%);
+    --text-primary-active: hsl(220, 26%, 24%);
+    --text-primary-on-fill: hsl(220, 26%, 98%);
+
+    --text-secondary: hsl(220, 26%, 24%);
+    --text-secondary-hover: hsl(220, 26%, 18%);
+    --text-secondary-active: hsl(220, 26%, 14%);
+    --text-secondary-on-fill: hsl(220, 26%, 98%);
+
+    --text-brand: var(--text-primary);
+    --text-brand-hover: var(--text-primary-hover);
+    --text-brand-active: var(--text-primary-active);
+    --text-brand-on-fill: var(--text-primary-on-fill);
+
+    --text-code: hsl(220, 3%, 47%);
+    --text-code-on-fill: hsl(220, 3%, 47%);
+    --text-code-comment: hsl(220, 3%, 47%);;
+    --text-code-punctuation: hsl(220, 3%, 47%);
+    --text-code-property: hsl(220, 3%, 47%);
+    --text-code-selector: hsl(220, 3%, 47%);
+    --text-code-operator: hsl(220, 3%, 47%);
+    --text-code-variable: hsl(220, 3%, 47%);
+    --text-code-function: hsl(220, 3%, 47%);
+    --text-code-keyword: hsl(220, 3%, 47%);
+
+    --border-primary: hsl(220, 9%, 85%);
+    --border-primary-hover: hsl(220, 9%, 77%);
+    --border-primary-active: hsl(220, 9%, 69%);
+    --border-primary-selected: hsl(220, 9%, 61%);
+    --border-code: var(--border-primary);
+
+    --surface-primary: var(--background-primary);
+    --surface-secondary: var(--background-secondary);
+    --surface-code: var(--background-code);
+
+    /* Theme variables */
+
+    --header-surface: var(--surface-primary);
+    --header-border: transparent;
+  }
+}
+
+* {
+  @apply transition-colors duration-200
 }

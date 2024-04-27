@@ -20,15 +20,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <Providers>
-        <body
-          className={`${inter.variable} ${larsseit.variable} ${jetbrains.variable} ${inter.className} flex min-h-screen flex-col`}
-        >
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${inter.variable} ${larsseit.variable} ${jetbrains.variable} ${inter.className} flex min-h-screen flex-col bg-background-primary`}
+      >
+        <Providers>
           <PostHogPageView />
           {children}
-        </body>
-      </Providers>
+        </Providers>
+      </body>
     </html>
   );
 }

@@ -133,9 +133,6 @@ const config = {
             active: "var(--border-primary-active)",
             selected: "var(--border-primary-selected)",
           },
-          secondary: {
-            DEFAULT: "var(--border-secondary)",
-          },
           brand: {
             DEFAULT: "var(--border-brand)",
           },
