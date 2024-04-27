@@ -13,7 +13,7 @@ const PostListItem = ({ title, href, stat }: React.PropsWithChildren<PostListIte
       <Link href={href} variant="labelMd" color="brand" className="flex-grow">
         {title}
       </Link>
-      <Typography variant="bodySm" color="secondary" className="flex-shrink-0 mt-0.5">
+      <Typography variant="bodySm" color="secondary" className="flex-shrink-0 mt-0.5 text-right">
         {stat}
       </Typography>
     </li>

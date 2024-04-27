@@ -60,7 +60,7 @@ const getPageViews = async (slugs: string[] = []) =>
     return response.data.result.reduce(
       (acc, item) => {
         // @ts-expect-error - The format is correct
-        acc[item.label] = item.aggregated_value;
+        acc[new URL(item.label).pathname] = item.aggregated_value;
         return acc;
       },
       {} as Record<string, number>,
