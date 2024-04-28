@@ -95,7 +95,7 @@ const BlogPage = async ({ params: { year, slug } }: Props) => {
                       themes: {
                         light: "github-light",
                         dark: "github-dark",
-                        paper: "github-light",
+                        paper: "none",
                       },
                       defaultColor: "light",
                     },
@@ -108,7 +108,7 @@ const BlogPage = async ({ params: { year, slug } }: Props) => {
                       themes: {
                         light: "github-light",
                         dark: "github-dark",
-                        paper: "github-dark",
+                        paper: "none",
                       },
                       defaultColor: "light",
                     },
