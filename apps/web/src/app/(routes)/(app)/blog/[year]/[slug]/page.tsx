@@ -6,11 +6,32 @@ import MdxImage from "@/modules/blog/components/MdxImage";
 import MdxP from "@/modules/blog/components/MdxP";
 import getAllPosts from "@/modules/blog/data/getAllPosts";
 import getPost from "@/modules/blog/data/getPost";
+import getAppUrl from "@/modules/root/utils/getAppUrl";
 import ButtonLink from "@/modules/ui/components/Button/ButtonLink";
 import Typography from "@/modules/ui/components/Typography/Typography";
 import { IconMail } from "@tabler/icons-react";
+import type { Metadata } from "next";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { notFound } from "next/navigation";
+
+type Props = { params: { year: string; slug: string } };
+
+export const generateMetadata = async ({ params: { year, slug } }: Props): Promise<Metadata> => {
+  const post = await getPost(`${slug}.mdx`);
+
+  return {
+    title: post.meta.title,
+    description: post.meta.description,
+    openGraph: {
+      type: "article",
+      title: `${post.meta.title} - Jasper Verbeet's Blog`,
+      description: post.meta.description,
+      publishedTime: post.meta.date.toISOString(),
+      url: new URL(post.route, getAppUrl().origin),
+      authors: ["Jasper Verbeet"],
+    },
+  };
+};
 
 export const generateStaticParams = async () => {
   const posts = await getAllPosts();
@@ -25,7 +46,7 @@ export const generateStaticParams = async () => {
   });
 };
 
-const BlogPage = async ({ params: { year, slug } }: { params: { year: string; slug: string } }) => {
+const BlogPage = async ({ params: { year, slug } }: Props) => {
   const post = await getPost(`${slug}.mdx`);
 
   /**
