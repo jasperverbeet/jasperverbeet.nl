@@ -12,7 +12,7 @@ const SectionPopular = async () => {
     .map((post) => {
       return {
         ...post,
-        pageviews: pageviews[post.route],
+        pageviews: post.route in pageviews ? pageviews[post.route] : 0,
       };
     })
     .sort((a, b) => {
