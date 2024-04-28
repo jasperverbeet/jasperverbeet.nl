@@ -3,35 +3,10 @@
 import { cache } from "@/modules/root/utils/cache";
 import posthogClient from "../client";
 import serverEnv from "@/server.env";
+import getAppUrl from "@/modules/root/utils/getAppUrl";
 
 const getPageViews = async (slugs: string[] = []) =>
   cache(async () => {
-    const properties = {
-      type: "AND",
-      values: [
-        {
-          type: "AND",
-          values: [
-            {
-              key: "$current_url",
-              type: "event",
-              value: "http://localhost:3000/",
-              operator: "icontains",
-            },
-          ],
-        },
-        {
-          type: "OR",
-          values: slugs.map((slug) => ({
-            key: "$current_url",
-            type: "event",
-            value: slug,
-            operator: "icontains",
-          })),
-        },
-      ],
-    };
-
     const response = await posthogClient.POST("/api/projects/{project_id}/insights/trend/", {
       params: {
         path: {
@@ -45,11 +20,20 @@ const getPageViews = async (slugs: string[] = []) =>
             math: "total",
           },
         ],
-        // @ts-expect-error - The format is correct
-        properties,
+        properties: {
+          type: "AND",
+          values: [
+            {
+              key: "$current_url",
+              value: getAppUrl().hostname,
+              operator: "icontains",
+            },
+          ],
+        },
         display: "ActionsTable",
-        date_from: "ALL",
+        date_from: "2024-01-01",
         breakdown: "$current_url",
+        // @ts-expect-error - The format is correct
         refresh: true,
       },
     });

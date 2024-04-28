@@ -21,8 +21,6 @@ const MenuThemeRadio = () => {
     return null;
   }
 
-  console.log(themes);
-
   return (
     <DropdownMenu.Portal>
       <DropdownMenu.SubContent
