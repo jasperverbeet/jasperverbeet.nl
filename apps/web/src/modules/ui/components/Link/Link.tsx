@@ -4,7 +4,7 @@ import type { RawLinkProps } from "./RawLink";
 import RawLink from "./RawLink";
 
 export const linkStyles = tv({
-  base: "hover:underline underline-offset-2",
+  base: "hover:underline underline-offset-2 align-top",
   variants: {
     color: {
       brand: "text-text-brand hover:text-text-brand-hover active:text-text-brand-active",

@@ -6,7 +6,7 @@ import Typography from "../ui/components/Typography/Typography";
 const SectionLatest = async () => {
   const posts = (await getAllPosts())
     .sort((a, b) => {
-      return new Date(a.meta.date).getTime() - new Date(b.meta.date).getTime();
+      return b.meta.date.getTime() - a.meta.date.getTime();
     })
     .slice(0, 5);
 

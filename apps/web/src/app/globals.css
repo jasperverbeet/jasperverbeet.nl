@@ -144,8 +144,8 @@
     }
   }
 
-  * {
-    @apply transition-colors duration-75 text-text-primary
+  html {
+    @apply text-text-primary transition-colors duration-75
   }
 }
 

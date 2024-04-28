@@ -7,9 +7,9 @@ export const iconStyles = tv({
       md: "h-4 w-4",
     },
     variant: {
-      primary: "text-text-primary",
-      secondary: "text-text-secondary",
-      brand: "text-text-brand",
+      primary: "text-current",
+      secondary: "",
+      brand: "",
     },
   },
   defaultVariants: {
