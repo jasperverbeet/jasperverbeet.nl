@@ -60,7 +60,7 @@
     --fill-primary-hover: hsl(220, 10%, 18%);
     --fill-primary-active: hsl(220, 10%, 24%);
     --fill-primary-selected: hsl(220, 10%, 24%);
-    --fill-brand: hsl(220, 87%, 55%);
+    --fill-brand: hsl(220, 87%, 63%);
 
     --text-primary: hsl(220, 26%, 98%);
     --text-primary-hover: hsl(220, 26%, 94%);
@@ -72,9 +72,9 @@
     --text-secondary-active: hsl(220, 3%, 44%);
     --text-secondary-on-fill: hsl(220, 3%, 98%);
 
-    --text-brand: hsl(220, 87%, 55%);
-    --text-brand-hover: hsl(220, 87%, 48%);
-    --text-brand-active: hsl(220, 87%, 42%);
+    --text-brand: hsl(220, 87%, 63%);
+    --text-brand-hover: hsl(220, 87%, 56%);
+    --text-brand-active: hsl(220, 87%, 50%);
     --text-brand-on-fill: hsl(220, 3%, 98%);
 
     --border-primary: hsl(220, 9%, 20%);
