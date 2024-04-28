@@ -1,5 +1,5 @@
+import remarkGfm from "remark-gfm";
 import MdxA from "@/modules/blog/components/MdxA";
-import MdxCode from "@/modules/blog/components/MdxCode";
 import MdxH1 from "@/modules/blog/components/MdxH1";
 import MdxH2 from "@/modules/blog/components/MdxH2";
 import MdxImage from "@/modules/blog/components/MdxImage";
@@ -13,10 +13,13 @@ import { IconMail } from "@tabler/icons-react";
 import type { Metadata } from "next";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { notFound } from "next/navigation";
+import rehypeShiki from "@shikijs/rehype";
+import MdxPre from "@/modules/blog/components/MdxPre";
+import { rehypeInlineShiki } from "@/modules/blog/rehype/inline-shiki";
 
 type Props = { params: { year: string; slug: string } };
 
-export const generateMetadata = async ({ params: { year, slug } }: Props): Promise<Metadata> => {
+export const generateMetadata = async ({ params: { slug } }: Props): Promise<Metadata> => {
   const post = await getPost(`${slug}.mdx`);
 
   return {
@@ -69,19 +72,50 @@ const BlogPage = async ({ params: { year, slug } }: Props) => {
             </Typography>
           </div>
         </header>
-        <div className="prose">
+        <div className="prose prose-code:font-normal prose-code:bg-fill-code prose-code:rounded prose-code:before:content-none prose-code:after:content-none prose-code:px-1 prose-code:py-0.5 prose-code:text-text-code">
           <MDXRemote
             components={{
               p: MdxP,
               h1: MdxH1,
               h2: MdxH2,
+              pre: MdxPre,
               img: MdxImage,
-              code: MdxCode,
-              pre: ({ children }) => <>{children}</>,
               a: MdxA,
             }}
             source={post.content}
-            options={{ parseFrontmatter: true }}
+            options={{
+              parseFrontmatter: true,
+              mdxOptions: {
+                remarkPlugins: [remarkGfm],
+                rehypePlugins: [
+                  [
+                    // @ts-expect-error - somehow the types dont match
+                    rehypeShiki,
+                    {
+                      themes: {
+                        light: "github-light",
+                        dark: "github-dark",
+                        paper: "github-light",
+                      },
+                      defaultColor: "light",
+                    },
+                  ],
+
+                  [
+                    // @ts-expect-error - somehow the types dont match
+                    rehypeInlineShiki,
+                    {
+                      themes: {
+                        light: "github-light",
+                        dark: "github-dark",
+                        paper: "github-dark",
+                      },
+                      defaultColor: "light",
+                    },
+                  ],
+                ],
+              },
+            }}
           />
         </div>
       </article>

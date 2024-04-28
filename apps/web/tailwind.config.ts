@@ -64,9 +64,6 @@ const config = {
           secondary: {
             DEFAULT: "var(--background-secondary)",
           },
-          code: {
-            DEFAULT: "var(--background-code)",
-          },
         },
         text: {
           primary: {
@@ -87,19 +84,6 @@ const config = {
             active: "var(--text-brand-active)",
             onFill: "var(--text-brand-on-fill)",
           },
-          code: {
-            DEFAULT: "var(--text-code)",
-            onFill: "var(--text-code-on-fill)",
-
-            comment: "var(--text-code-comment)",
-            punctuation: "var(--text-code-punctuation)",
-            property: "var(--text-code-property)",
-            selector: "var(--text-code-selector)",
-            operator: "var(--text-code-operator)",
-            variable: "var(--text-code-variable)",
-            function: "var(--text-code-function)",
-            keyword: "var(--text-code-keyword)",
-          },
         },
         surface: {
           primary: {
@@ -107,9 +91,6 @@ const config = {
           },
           secondary: {
             DEFAULT: "var(--surface-secondary)",
-          },
-          code: {
-            DEFAULT: "var(--surface-code)",
           },
         },
         fill: {
@@ -121,9 +102,6 @@ const config = {
           },
           brand: {
             DEFAULT: "var(--fill-brand)",
-          },
-          code: {
-            DEFAULT: "var(--fill-code)",
           },
         },
         border: {

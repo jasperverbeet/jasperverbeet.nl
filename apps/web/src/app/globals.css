@@ -11,14 +11,12 @@
 
     --background-primary: hsl(0, 0%, 100%);
     --background-secondary: hsl(0, 0%, 98%);
-    --background-code: hsl(0, 0%, 100%);
 
     --fill-primary: hsl(100, 0%, 100%);
     --fill-primary-hover: hsl(0, 0%, 98%);
     --fill-primary-active: hsl(0, 0%, 96%);
     --fill-primary-selected: hsl(0, 0%, 96%);
     --fill-brand: hsl(220, 87%, 55%);
-    --fill-code: hsl(0, 50%, 50%);
 
     --text-primary: hsl(220, 26%, 14%);
     --text-primary-hover: hsl(220, 26%, 18%);
@@ -35,31 +33,19 @@
     --text-brand-active: hsl(220, 87%, 42%);
     --text-brand-on-fill: hsl(220, 3%, 98%);
 
-    --text-code: hsl(220, 3%, 47%);
-    --text-code-on-fill: hsl(220, 3%, 47%);
-    --text-code-comment: hsl(220, 3%, 47%);;
-    --text-code-punctuation: hsl(220, 3%, 47%);
-    --text-code-property: hsl(220, 3%, 47%);
-    --text-code-selector: hsl(220, 3%, 47%);
-    --text-code-operator: hsl(220, 3%, 47%);
-    --text-code-variable: hsl(220, 3%, 47%);
-    --text-code-function: hsl(220, 3%, 47%);
-    --text-code-keyword: hsl(220, 3%, 47%);
-
     --border-primary: hsl(220, 9%, 91%);
     --border-primary-hover: hsl(220, 9%, 83%);
     --border-primary-active: hsl(220, 9%, 75%);
     --border-primary-selected: hsl(220, 9%, 67%);
-    --border-code: hsl(220, 9%, 91%);
 
     --surface-primary: hsl(0, 0%, 100%);
     --surface-secondary: hsl(0, 0%, 98%);
-    --surface-code: hsl(220, 26%, 14%);
 
     /* Theme variables */
 
     --header-surface: var(--surface-primary);
     --header-border: transparent;
+
   }
 
   /* Dark Theme */
@@ -69,14 +55,12 @@
     /* Design Tokens */
     --background-primary: hsl(220, 10%, 12%);
     --background-secondary: hsl(220, 8%, 15%);
-    --background-code: hsl(220, 26%, 14%);
 
     --fill-primary: hsl(220, 10%, 12%);
     --fill-primary-hover: hsl(220, 10%, 18%);
     --fill-primary-active: hsl(220, 10%, 24%);
     --fill-primary-selected: hsl(220, 10%, 24%);
     --fill-brand: hsl(220, 87%, 55%);
-    --fill-code: hsl(0, 50%, 50%);
 
     --text-primary: hsl(220, 26%, 98%);
     --text-primary-hover: hsl(220, 26%, 94%);
@@ -93,31 +77,24 @@
     --text-brand-active: hsl(220, 87%, 42%);
     --text-brand-on-fill: hsl(220, 3%, 98%);
 
-    --text-code: hsl(220, 3%, 47%);
-    --text-code-on-fill: hsl(220, 3%, 47%);
-    --text-code-comment: hsl(220, 3%, 47%);;
-    --text-code-punctuation: hsl(220, 3%, 47%);
-    --text-code-property: hsl(220, 3%, 47%);
-    --text-code-selector: hsl(220, 3%, 47%);
-    --text-code-operator: hsl(220, 3%, 47%);
-    --text-code-variable: hsl(220, 3%, 47%);
-    --text-code-function: hsl(220, 3%, 47%);
-    --text-code-keyword: hsl(220, 3%, 47%);
-
     --border-primary: hsl(220, 9%, 20%);
     --border-primary-hover: hsl(220, 9%, 28%);
     --border-primary-active: hsl(220, 9%, 36%);
     --border-primary-selected: hsl(220, 9%, 44%);
-    --border-code: var(--border-primary);
 
     --surface-primary: var(--background-primary);
     --surface-secondary: var(--background-secondary);
-    --surface-code: var(--background-code);
 
     /* Theme variables */
 
     --header-surface: var(--surface-primary);
     --header-border: transparent;
+
+    .shiki,
+    .shiki span {
+      color: var(--shiki-dark) !important;
+      background-color: var(--shiki-dark-bg) !important;
+    }
   }
 
   :root[data-theme='paper'] {
@@ -125,14 +102,12 @@
     /* Design Tokens */
     --background-primary: hsl(220, 3%, 93%);
     --background-secondary: hsl(220, 3%, 90%);
-    --background-code: hsl(220, 3%, 90%);
 
     --fill-primary: hsl(220, 3%, 93%);
     --fill-primary-hover: hsl(220, 3%, 90%);
     --fill-primary-active: hsl(220, 3%, 87%);
     --fill-primary-selected: hsl(220, 3%, 87%);
     --fill-brand: hsl(220, 87%, 55%);
-    --fill-code: hsl(0, 50%, 50%);
 
     --text-primary: hsl(220, 26%, 14%);
     --text-primary-hover: hsl(220, 26%, 18%);
@@ -149,31 +124,24 @@
     --text-brand-active: var(--text-primary-active);
     --text-brand-on-fill: var(--text-primary-on-fill);
 
-    --text-code: hsl(220, 3%, 47%);
-    --text-code-on-fill: hsl(220, 3%, 47%);
-    --text-code-comment: hsl(220, 3%, 47%);;
-    --text-code-punctuation: hsl(220, 3%, 47%);
-    --text-code-property: hsl(220, 3%, 47%);
-    --text-code-selector: hsl(220, 3%, 47%);
-    --text-code-operator: hsl(220, 3%, 47%);
-    --text-code-variable: hsl(220, 3%, 47%);
-    --text-code-function: hsl(220, 3%, 47%);
-    --text-code-keyword: hsl(220, 3%, 47%);
-
     --border-primary: hsl(220, 9%, 85%);
     --border-primary-hover: hsl(220, 9%, 77%);
     --border-primary-active: hsl(220, 9%, 69%);
     --border-primary-selected: hsl(220, 9%, 61%);
-    --border-code: var(--border-primary);
 
     --surface-primary: var(--background-primary);
     --surface-secondary: var(--background-secondary);
-    --surface-code: var(--background-code);
 
     /* Theme variables */
 
     --header-surface: var(--surface-primary);
     --header-border: transparent;
+
+    .shiki,
+    .shiki span {
+      color: var(--shiki-paper) !important;
+      background-color: var(--shiki-paper-bg) !important;
+    }
   }
 }
 
