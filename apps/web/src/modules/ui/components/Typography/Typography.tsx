@@ -24,7 +24,6 @@ export const typographyStyles = tv({
   },
   defaultVariants: {
     variant: "labelMd",
-    color: "primary",
   },
 });
 

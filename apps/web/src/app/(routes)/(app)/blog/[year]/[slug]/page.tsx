@@ -16,6 +16,7 @@ import { notFound } from "next/navigation";
 import rehypeShiki from "@shikijs/rehype";
 import MdxPre from "@/modules/blog/components/MdxPre";
 import { rehypeInlineShiki } from "@/modules/blog/rehype/inline-shiki";
+import MdxBlockquote from "@/modules/blog/components/MdxBlockquote";
 
 type Props = { params: { year: string; slug: string } };
 
@@ -72,7 +73,7 @@ const BlogPage = async ({ params: { year, slug } }: Props) => {
             </Typography>
           </div>
         </header>
-        <div className="prose prose-code:font-normal prose-code:bg-fill-code prose-code:rounded prose-code:before:content-none prose-code:after:content-none prose-code:px-1 prose-code:py-0.5 prose-code:text-text-code">
+        <div className="prose prose-code:font-normal prose-code:bg-fill-code prose-code:rounded prose-code:before:content-none prose-code:after:content-none prose-code:px-1 prose-code:py-0.5 prose-code:text-text-code prose-p:before:content-none prose-p:after:content-none">
           <MDXRemote
             components={{
               p: MdxP,
@@ -80,6 +81,7 @@ const BlogPage = async ({ params: { year, slug } }: Props) => {
               h2: MdxH2,
               pre: MdxPre,
               img: MdxImage,
+              blockquote: MdxBlockquote,
               a: MdxA,
             }}
             source={post.content}

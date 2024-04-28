@@ -143,8 +143,9 @@
       background-color: var(--shiki-paper-bg) !important;
     }
   }
+
+  * {
+    @apply transition-colors duration-75 text-text-primary
+  }
 }
 
-* {
-  @apply transition-colors duration-200
-}

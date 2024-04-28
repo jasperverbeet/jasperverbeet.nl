@@ -39,17 +39,20 @@ export const rehypeInlineShiki: Plugin<[RehypeInlineShikiOptions], Root> = (
       if (node.tagName !== "code") return;
 
       // biome-ignore lint/suspicious/noExplicitAny: we don't have enough type information here
-      const match = (node.children[0] as any)?.value?.match(inlineShikiRegex);
-      if (!match) return;
+      const nodeValue = (node.children[0] as any)?.value;
 
-      const [, code, lang] = match;
+      const match = nodeValue?.match(inlineShikiRegex);
+
+      if (!match && !nodeValue) return;
+
+      const code = match?.[1] ?? nodeValue;
+      const lang = match?.[2] ?? "plaintext";
+
       const hast = highlighter.codeToHast(code, { ...options, lang });
 
       // biome-ignore lint/suspicious/noExplicitAny: we don't have enough type information here
       const inlineCodePre = hast.children[0] as any;
       const inlineCode = inlineCodePre.children[0];
-
-      console.log(inlineCodePre);
 
       inlineCode.properties.class =
         `${inlineCodePre.properties.class} inline border border-border-primary border-b-2`.trim();
