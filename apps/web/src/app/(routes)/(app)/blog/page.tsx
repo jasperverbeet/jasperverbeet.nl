@@ -5,6 +5,8 @@ export const metadata: Metadata = {
   title: "Archive",
 };
 
+export const revalidate = 1800; // 30 minutes
+
 const BlogArchivePage: React.FC = () => {
   return (
     <>

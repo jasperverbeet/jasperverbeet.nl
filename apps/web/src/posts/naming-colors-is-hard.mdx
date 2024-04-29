@@ -1,7 +1,7 @@
 ---
 title: Using color roles to create consistent design systems
 date: '2024-04-28'
-description: asdf
+description: Exploring the use of color roles in design systems to ensure consistency across components.
 ---
 
 According to [Two Hard Things](https://martinfowler.com/bliki/TwoHardThings.html) by Martin Fowler, naming things is one of the two hard things in computer science. I think naming colors is no exception.
@@ -54,7 +54,7 @@ Colors roles are a middleground between using color pallettes directly and defin
 >
 > Color roles like `default` will have all tokens defined, because the default color role offers the baseline color for all elements in the Shopify admin. Roles like `critical` or `information` will only have a selection of tokens defined, as these roles are usually applied to specific, smaller and more specialized components like badges or banners.
 
-At the time of writing, the following image describes the color roles for the light theme on this website excluding states, I'll get to those later.
+At the time of writing, the following image describes the color roles for the light theme on this website excluding states.
 
 ![Color roles](/posts/naming-colors-is-hard/roles-example.png)
 
@@ -121,16 +121,14 @@ module.exports = {
 }
 ```
 
-For default styles I like to omit the `default` state, because it's the most common state. In Tailwind we can achieve this by using the `DEFAULT` key. So
+And these styles can be used in components like this:
 
 ```tsx
-<p class="text-text-primary-default" />
-// becomes
-<p class="text-text-primary" />
+<button class="box-border flex flex-shrink-0 items-center font-sans font-medium ring-2 ring-transparent focus:outline-none bg-fill-primary text-text-primary border-border-primary hover:bg-fill-primary-hover hover:border-border-primary-hover active:bg-fill-primary-active focus-visible:ring-border-primary-selected border border-b-2 active:border-b h-10 px-3.5 text-sm rounded-full pl-1 pt-1 pb-1 pr-2" />
 ```
 
 If you inspect element this page you will find more examples of color roles in action.
 
-By the way, the code for this website is open source, you can find my color role configuration [here](https://github.com/jasperverbeet/jasperverbeet.nl/blob/main/apps/web/tailwind.config.ts).
+The code for this website is open source, and you can find my color role configuration [here](https://github.com/jasperverbeet/jasperverbeet.nl/blob/main/apps/web/tailwind.config.ts).
 
 Thanks for reading! If you have any questions or feedback, feel free to reach out.

@@ -9,7 +9,8 @@ export const inter = Inter({
 });
 
 export const jetbrains = JetBrains_Mono({
-  weight: ["400"],
+  weight: ["400", "500"],
+  subsets: ["latin"],
   display: "swap",
   variable: "--font-jetbrains",
 });
