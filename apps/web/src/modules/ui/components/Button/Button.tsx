@@ -21,7 +21,7 @@ const buttonStyles = tv({
       lg: "h-10 px-3.5 text-sm",
     },
     shape: {
-      rounded: "rounded-lg",
+      rounded: "rounded",
       pill: "rounded-full",
       circle: "rounded-full",
     },

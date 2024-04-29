@@ -5,7 +5,7 @@ import Icon, { type IconProp } from "../Icon/Icon";
 
 const inputStyles = tv({
   slots: {
-    root: "box-border flex flex-shrink-0 items-center rounded-lg font-sans font-medium ring-2 ring-transparent transition-colors",
+    root: "box-border flex flex-shrink-0 items-center rounded font-sans font-medium ring-2 ring-transparent transition-colors",
     input:
       "text-text-primary placeholder:text-text-secondary h-full w-full border-none bg-transparent focus:outline-none",
   },

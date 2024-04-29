@@ -35,7 +35,7 @@ const MdxImage = forwardRef<HTMLImageElement, React.HTMLProps<HTMLImageElement>>
         blurDataURL={`data:image/${blurImageInfo.format};base64,${blurImageData.toString(
           "base64",
         )}`}
-        className="w-[calc(100%_+_2rem)] -translate-x-4 max-w-[initial]"
+        className="w-[calc(100%_+_2rem)] -translate-x-4 max-w-[initial] md:rounded overflow-hidden"
       />
     );
   },

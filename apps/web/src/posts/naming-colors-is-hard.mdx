@@ -1,7 +1,136 @@
 ---
-title: Naming Colors is Hard
+title: Using color roles to create consistent design systems
 date: '2024-04-28'
 description: asdf
 ---
 
-According to [Two Hard Things](https://martinfowler.com/bliki/TwoHardThings.html) by Martin Fowler, naming things is one of the two hard things in computer science (invalidating cache is the other). I think naming colors is hard too.
+According to [Two Hard Things](https://martinfowler.com/bliki/TwoHardThings.html) by Martin Fowler, naming things is one of the two hard things in computer science. I think naming colors is no exception.
+
+A default [Tailwind](https://tailwindcss.com/docs/customizing-colors) configuration gives you access to a wide range of colors, like `gray-100`, `gray-200`, `gray-300`, etc. While these names tell you something about what the color looks like, they don't tell you anything about what the color is used for.
+
+Look at these components for example:
+
+```tsx
+const Button = () => (
+  <button className="bg-gray-100 text-gray-900 border-gray-200">
+    Click me
+  </button>
+);
+
+const Typography = () => (
+  <p className="text-slate-900">
+    Hello, world!
+  </p>
+);
+```
+
+Both have very similar colors, but they're not the same. You probably want your foreground text to be the same between your components. But in this example,  `Button` uses colors from the gray palette, while `Typography` uses colors from the slate palette. This is a very simple example, you can imagine how this can get out of hand quickly with hover states, focus states, etc.
+
+Using a color pallette directly like this is makes it hard to maintain a consistent design system. Not only because you easily create inconsistencies between components, but also because you need to decide and remember which color to use when working on components. Let alone refactoring your design system when you want to change a color.
+
+To solve that problem, I've often resorted to using colors like `primary`, `secondary`, `tertiary`, etc. This makes deciding which color to use simpler, but it introduces a new problem. For example, the `primary` color might mean different things depending on where it's used. A primary background color will be different from a primary text color.
+
+```tsx
+const Button = () => (
+  <button className="bg-primary text-primary">
+    Invisible text
+  </button>
+);
+```
+
+Another option is to define colors per component. This is a good approach if you want to have full control. But it can still lead to inconsistencies. In essence, you're maintaining a color palette per component, with the benefit is that you have a clear overview of which colors are used where.
+
+```tsx
+const Button = () => (
+  <button className="bg-button text-button border-button hover:bg-button-hover focus:bg-button-focus">
+    Click me
+  </button>
+);
+```
+
+Colors roles are a middleground between using color pallettes directly and defining colors per component. They're a way to group colors together based on their role in your design system. My approach is heavily inspired by [Shopify's color roles](https://polaris.shopify.com/design/colors#color-roles).
+
+> A color role is composed of a collection of tokens that represent different parts of the UI. Each color role follows the same logic for all tokens, but not all tokens are defined for each color role.
+>
+> Color roles like `default` will have all tokens defined, because the default color role offers the baseline color for all elements in the Shopify admin. Roles like `critical` or `information` will only have a selection of tokens defined, as these roles are usually applied to specific, smaller and more specialized components like badges or banners.
+
+At the time of writing, the following image describes the color roles for the light theme on this website excluding states, I'll get to those later.
+
+![Color roles](/posts/naming-colors-is-hard/roles-example.png)
+
+I use the `default` and `brand` color roles. The default color role is used for most of the UI, while the brand color role is used for elements that need to stand out, like links and some buttons. But you can imagine having more color roles like `critical`, `information`, `success` for things like alerts, badges, and banners.
+
+Within each role, we have relationships between colors. For example, the default color role has a `surface`, `fill`, `border`, and `text` color. These relationships define on what `elements` the color should be used.
+
+The image below shows how the colors are applied to a more complicated UI within the same design system.
+
+![Color roles applied](/posts/naming-colors-is-hard/relationships.png)
+
+- `background` is the background color for very large surface areas, like the entire page.
+- `surface` is the background color for elements with the highest level of prominence, like a card or a banner.
+- `fill` is the background color for elements with small surface areas, like a button or a badge.
+- `border` is primarily used enhance visual separation between elements.
+- `text` is the color for text on top of a `surface`, `background` or `fill`.
+
+```tsx
+const Button = () => (
+  <button className="bg-fill-brand text-text-brand-onFill border-border-brand">
+    Click me
+  </button>
+);
+
+const Typography = () => (
+  <p className="text-text-default">
+    Hello, world!
+  </p>
+);
+```
+
+Let's dissect `text-text-brand-onFill`. Here the first `text-` is a Tailwind modifier to apply a text color. The second `text-` is the relationship between the color and the element, we're applying a text color. The `brand` is the color role. The `onFill` is a special state to apply the color on top of a `fill` color. We could also have used `default` or `secondary` here.
+
+When we look at a tailwind configuration, we can see how the color roles are defined.
+
+```js
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [],
+  theme: {
+    extend: {
+      colors: {
+        // The relationship between the color and the element
+        text: {
+          // The color role
+          default: {
+            // The color state
+            DEFAULT: "var(--text-primary)",
+            hover: "var(--text-primary-hover)",
+            active: "var(--text-primary-active)",
+            onFill: "var(--text-primary-on-fill)",
+          },
+          // The brand color role
+          brand: {
+            DEFAULT: "var(--text-brand)",
+            hover: "var(--text-brand-hover)",
+            active: "var(--text-brand-active)",
+            onFill: "var(--text-brand-on-fill)",
+          },
+        },
+      }
+    },
+  },
+}
+```
+
+For default styles I like to omit the `default` state, because it's the most common state. In Tailwind we can achieve this by using the `DEFAULT` key. So
+
+```tsx
+<p class="text-text-primary-default" />
+// becomes
+<p class="text-text-primary" />
+```
+
+If you inspect element this page you will find more examples of color roles in action.
+
+By the way, the code for this website is open source, you can find my color role configuration [here](https://github.com/jasperverbeet/jasperverbeet.nl/blob/main/apps/web/tailwind.config.ts).
+
+Thanks for reading! If you have any questions or feedback, feel free to reach out.

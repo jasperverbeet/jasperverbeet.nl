@@ -25,7 +25,12 @@ const RawLink = forwardRef<HTMLAnchorElement, RawLinkProps>(
     const _iconRight = isExternal ? IconExternalLink : iconRight;
 
     return (
-      <Link href={href} ref={ref}>
+      <Link
+        href={href}
+        ref={ref}
+        target={isExternal ? "_blank" : undefined}
+        rel="noopener noreferrer"
+      >
         <ButtonContent
           {...props}
           iconLeft={iconLeft}
