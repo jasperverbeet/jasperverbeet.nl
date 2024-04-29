@@ -4,7 +4,7 @@ import Image from "next/image";
 import ButtonAction from "@/modules/ui/components/Button/ButtonAction";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 
-import Profile from "@/public/profile.jpeg";
+import Profile from "@/public/profile.jpg";
 import { IconChevronRight, IconMenu } from "@tabler/icons-react";
 import ButtonLink from "@/modules/ui/components/Button/ButtonLink";
 import Divider from "@/modules/ui/components/Divider/Divider";
