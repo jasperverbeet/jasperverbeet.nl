@@ -20,6 +20,9 @@ const SectionPopular = async () => {
     })
     .slice(0, 5);
 
+  console.log(_posts);
+  console.log(pageviews);
+
   return (
     <Section>
       <div className="space-y-4">
