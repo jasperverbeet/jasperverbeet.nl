@@ -15,7 +15,7 @@ const getPost = async (filename: string) => {
     /**
      * Read the file content
      */
-    const content = await readFile(path.join(process.cwd(), "posts", filename), "utf-8");
+    const content = await readFile(path.join(process.cwd(), "src", "posts", filename), "utf-8");
 
     /**
      * Parse the front matter
