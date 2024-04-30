@@ -18,6 +18,8 @@ import MdxPre from "@/modules/blog/components/MdxPre";
 import { rehypeInlineShiki } from "@/modules/blog/rehype/inline-shiki";
 import MdxBlockquote from "@/modules/blog/components/MdxBlockquote";
 
+export const revalidate = 1800; // 30 minutes
+
 type Props = { params: { year: string; slug: string } };
 
 export const generateMetadata = async ({ params: { slug } }: Props): Promise<Metadata> => {
