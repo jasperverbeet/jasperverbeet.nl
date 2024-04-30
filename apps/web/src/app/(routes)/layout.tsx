@@ -5,6 +5,8 @@ import Providers from "@/modules/root/components/Providers";
 import { inter, jetbrains, larsseit } from "@/lib/fonts/fonts";
 import dynamic from "next/dynamic";
 
+export const preferredRegion = ["fra1"];
+
 const PostHogPageView = dynamic(() => import("@/lib/posthog/components/PostHogPageView"), {
   ssr: false,
 });
