@@ -3,7 +3,6 @@
 import { cache } from "@/modules/root/utils/cache";
 import posthogClient from "../client";
 import serverEnv from "@/server.env";
-import getAppUrl from "@/modules/root/utils/getAppUrl";
 
 const getPageViews = async (slugs: string[] = []) =>
   cache(async () => {
@@ -25,8 +24,8 @@ const getPageViews = async (slugs: string[] = []) =>
           values: [
             {
               key: "$current_url",
-              value: getAppUrl().hostname,
-              operator: "icontains",
+              value: "locahost",
+              operator: "not_icontains",
             },
           ],
         },
